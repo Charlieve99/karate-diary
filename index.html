@@ -1,86 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bitácora de Karate</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <main class="container">
-      <header class="hero">
-        <h1>Bitácora de clases de Karate</h1>
-        <p>Registra y revisa los temas vistos en cada clase con fecha y descripción.</p>
-      </header>
+        <header class="hero">
+            <h1>Bitácora de clases de Karate</h1>
+            <p>Registra y revisa los temas vistos en cada clase con fecha y descripción.</p>
+        </header>
 
-      <p id="status-message" class="status-message" aria-live="polite"></p>
+        <p id="status-message" class="status-message" aria-live="polite"></p>
 
-      <section class="auth-panel" aria-label="Autenticación">
-        <div id="auth-view" class="auth-view">
-          <h2>Acceso</h2>
-          <form id="auth-form" class="auth-form">
-            <label>
-              Correo
-              <input type="email" id="auth-email" placeholder="tu@email.com" required />
-            </label>
-            <label>
-              Contraseña
-              <input type="password" id="auth-password" placeholder="********" required />
-            </label>
-            <div class="auth-actions">
-              <button type="submit" id="auth-submit-btn">Entrar</button>
-              <button type="button" id="auth-toggle-btn" class="secondary">Crear cuenta</button>
+        <section class="auth-panel" aria-label="Autenticación">
+            <div id="auth-view" class="auth-view">
+                <h2>Acceso</h2>
+                <form id="auth-form" class="auth-form">
+                    <label>
+                        Correo
+                        <input type="email" id="auth-email" placeholder="tu@email.com" required />
+                    </label>
+                    <label>
+                        Contraseña
+                        <input type="password" id="auth-password" placeholder="********" required />
+                    </label>
+                    <div class="auth-actions">
+                        <button type="submit" id="auth-submit-btn">Entrar</button>
+                        <button type="button" id="auth-toggle-btn" class="secondary">Crear cuenta</button>
+                    </div>
+                </form>
             </div>
-          </form>
-        </div>
-        <div id="user-view" class="user-view hidden">
-          <p id="user-name" class="user-name"></p>
-          <button type="button" id="logout-btn" class="secondary">Salir</button>
-        </div>
-      </section>
+            <div id="user-view" class="user-view hidden">
+                <p id="user-name" class="user-name"></p>
+                <button type="button" id="logout-btn" class="secondary">Salir</button>
+            </div>
+        </section>
 
-      <section class="search-panel" aria-label="Buscador de clases">
-        <h2>Buscar clase</h2>
-        <form id="search-form">
-          <label>
-            Fecha
-            <input type="date" id="date-filter" />
-          </label>
-          <label>
-            Tema
-            <input type="text" id="topic-filter" placeholder="Ej. Kata, Kihon" />
-          </label>
-          <button type="submit">Buscar</button>
-          <button type="button" id="reset-btn" class="secondary">Limpiar</button>
-        </form>
-      </section>
+        <section class="search-panel" aria-label="Buscador de clases">
+            <h2>Buscar clase</h2>
+            <form id="search-form">
+                <label>
+                    Fecha
+                    <input type="date" id="date-filter" />
+                </label>
+                <label>
+                    Tema
+                    <input type="text" id="topic-filter" placeholder="Ej. Kata, Kihon" />
+                </label>
+                <button type="submit">Buscar</button>
+                <button type="button" id="reset-btn" class="secondary">Limpiar</button>
+            </form>
+        </section>
 
-      <section class="add-panel">
-        <button type="button" id="toggle-form-btn" class="secondary">Agregar clase</button>
-        <form id="entry-form" class="entry-form hidden">
-          <label>
-            Fecha
-            <input type="date" id="entry-date" required />
-          </label>
-          <label>
-            Tema
-            <input type="text" id="entry-topic" placeholder="Ej. Kumite" required />
-          </label>
-          <label>
-            Descripción
-            <textarea id="entry-description" rows="3" placeholder="Describe lo trabajado en clase" required></textarea>
-          </label>
-          <div class="form-actions">
-            <button type="submit">Guardar clase</button>
-          </div>
-        </form>
-      </section>
+        <section class="add-panel">
+            <button type="button" id="toggle-form-btn" class="secondary">Agregar clase</button>
+            <form id="entry-form" class="entry-form hidden">
+                <label>
+                    Fecha
+                    <input type="date" id="entry-date" required />
+                </label>
+                <label>
+                    Tema
+                    <input type="text" id="entry-topic" placeholder="Ej. Kumite" required />
+                </label>
+                <label>
+                    Descripción
+                    <textarea id="entry-description" rows="3" placeholder="Describe lo trabajado en clase"
+                        required></textarea>
+                </label>
+                <div class="form-actions">
+                    <button type="submit">Guardar clase</button>
+                </div>
+            </form>
+        </section>
 
-      <section id="entries-list" class="entries-list" aria-live="polite"></section>
+        <section id="entries-list" class="entries-list" aria-live="polite"></section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
